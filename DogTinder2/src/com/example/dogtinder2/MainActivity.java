@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
     	confirmPass = (EditText)findViewById(R.id.confirmPass);
     	textInfo = (TextView)findViewById(R.id.textView2);
     }
-    
+    //poooo
     public void confirm_register (View view)
     {
     	if(!textName.getText().toString().equals("") &&
