@@ -28,6 +28,11 @@
             android:label="Dog Tinder">
         </activity>
         
+        <activity
+            android:name="com.example.dogtinder2.PageCredits"
+            android:label="Dog Tinder">
+        </activity>
+        
     </application>
 
 </manifest>

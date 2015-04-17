@@ -4,9 +4,7 @@ package com.example.dogtinder2;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.view.View.OnClickListener;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -37,11 +35,9 @@ public class MainActivity extends Activity {
     		name = textName.getText().toString();
     		pass = textPass.getText().toString();
     		
-    		textName.setText("");
-    		textPass.setText("");
-    		confirmPass.setText("");
-    		
     		Intent intent = new Intent(this, PageLogin.class);
+    		intent.putExtra("login", name);
+    		intent.putExtra("password", pass);
         	startActivity(intent);
     	}
     	
@@ -59,6 +55,12 @@ public class MainActivity extends Activity {
     public void click_textLogin (View view)
     {
     	Intent intent = new Intent(this, PageLogin.class);
+    	startActivity(intent);
+    }
+    
+    public void click_textCredits(View view)
+    {
+    	Intent intent = new Intent(this, PageCredits.class);
     	startActivity(intent);
     }
     

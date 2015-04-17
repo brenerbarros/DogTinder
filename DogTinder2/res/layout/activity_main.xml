@@ -86,5 +86,15 @@
         android:clickable="true"
         android:onClick="click_textLogin" />
 
+    <TextView
+        android:id="@+id/textCredits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_alignTop="@id/textLogin"
+		android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="Créditos"
+        android:clickable="true"
+        android:onClick="click_textCredits" />
 
 </RelativeLayout>
