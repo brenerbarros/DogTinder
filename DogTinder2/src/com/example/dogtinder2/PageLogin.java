@@ -6,17 +6,19 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class PageLogin extends Activity {
 
 	MainActivity m = new MainActivity();
 	private EditText textName, textPass;
+	private TextView textInfo;
 	String name, pass;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.page_login);
+        setContentView(R.layout.login);
         
         Bundle extras = getIntent().getExtras();
         	if (extras != null) {
@@ -26,6 +28,7 @@ public class PageLogin extends Activity {
         
         textName = (EditText)findViewById(R.id.loginName);
         textPass = (EditText)findViewById(R.id.loginPass);
+        textInfo = (TextView)findViewById(R.id.textInfo);
     }
     
     public void click_textRegister (View view)
@@ -38,10 +41,11 @@ public class PageLogin extends Activity {
     {
     	if(textName.getText().toString().equals(name) && textPass.getText().toString().equals(pass))
     	{
-    		Log.i("Teste de login", "Conectado");
+    		Intent intent = new Intent (this, PageMenu.class);
+    		startActivity(intent);
     	}
     	
     	else
-    		Log.i("Teste de login", "Não conectado");
+    		textInfo.setText("Senha incorreta");
     }
 }

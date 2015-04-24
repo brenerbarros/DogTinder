@@ -33,6 +33,17 @@
         android:inputType="textPassword"
         android:ems="10" />
     
+    <TextView
+        android:id="@+id/textInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/loginPass"
+        android:layout_marginTop="45dp"
+        android:textSize="10dp"
+        android:textColor="@color/Red"
+        android:text=""
+        android:layout_centerHorizontal="true" />
+    
     <Button
         android:id="@+id/buttonLogin"
         style="?android:attr/buttonStyleSmall"
