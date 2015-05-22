@@ -1,5 +1,7 @@
 package com.example.dogtinder2;
 
+import org.xml.sax.DTDHandler;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -9,8 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class PageLogin extends Activity {
-
-	MainActivity m = new MainActivity();
+	
+	public DataStorage dt;
 	private EditText textName, textPass;
 	private TextView textInfo;
 	String name, pass;
@@ -20,6 +22,7 @@ public class PageLogin extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         
+        dt = new DataStorage();
         Bundle extras = getIntent().getExtras();
         	if (extras != null) {
         		name = extras.getString("login");
@@ -39,13 +42,18 @@ public class PageLogin extends Activity {
     
     public void click_buttonLogin(View view)
     {
-    	if(textName.getText().toString().equals(name) && textPass.getText().toString().equals(pass))
-    	{
-    		Intent intent = new Intent (this, PageMenu.class);
-    		startActivity(intent);
+    	if(!dt.getData(view.getContext(), "username: " + textName.getText().toString()).equals("0")  )
+    	{	
+    		String s = dt.getData(view.getContext(), "username: " + textName.getText().toString());
+    		
+    		if(s.equals(textPass.getText().toString())){
+	    		Intent intent = new Intent (this, PageMenu.class);
+	    		startActivity(intent);
+    		}
     	}
     	
+    	
     	else
-    		textInfo.setText("Senha incorreta");
+    		textInfo.setText("Senha incorreta ou não há usuário registrado");
     }
 }

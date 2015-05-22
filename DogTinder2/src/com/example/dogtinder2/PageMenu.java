@@ -17,7 +17,7 @@ public class PageMenu extends Activity {
     
     public void click_buttonAdopt(View view)
     {
-    	Intent intent = new Intent(this, PageLogin.class);
+    	Intent intent = new Intent(this, PageAdopt.class);
     	startActivity(intent);
     }
 }

@@ -4,6 +4,7 @@ package com.example.dogtinder2;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ public class MainActivity extends Activity {
 	
 	private EditText confirmPass, textPass, textName;
 	private TextView textInfo;
+	public DataStorage dt;
 	
 	String name, pass;
 
@@ -19,6 +21,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        dt = new DataStorage();
         
     	textName = (EditText)findViewById(R.id.registerName);
     	textPass = (EditText)findViewById(R.id.registerPass);
@@ -35,9 +39,16 @@ public class MainActivity extends Activity {
     		name = textName.getText().toString();
     		pass = textPass.getText().toString();
     		
+    		Log.d("String", name);
+    		
+    		//dt.setData(this, name + ";" + pass , "username: "  + name);
+    		dt.setData(view.getContext(), pass , "username: "  + name);
+    		//dt.setData(getApplicationContext(), pass, "password: " + pass);
+    		
     		Intent intent = new Intent(this, PageLogin.class);
     		intent.putExtra("login", name);
     		intent.putExtra("password", pass);
+    		
         	startActivity(intent);
     	}
     	

@@ -16,15 +16,15 @@
         <activity
             android:name="com.example.dogtinder2.MainActivity"
             android:label="Dog Tinder" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         
         <activity
             android:name="com.example.dogtinder2.PageLogin"
+            android:label="Dog Tinder">
+        </activity>
+        
+        <activity
+            android:name="com.example.dogtinder2.PageAdopt"
             android:label="Dog Tinder">
         </activity>
         
@@ -36,11 +36,11 @@
         <activity
             android:name="com.example.dogtinder2.PageMenu"
             android:label="Dog Tinder">
-        </activity>
-        
-        <activity
-            android:name="com.example.dogtinder2.PageAdopt"
-            android:label="Dog Tinder">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         
     </application>
